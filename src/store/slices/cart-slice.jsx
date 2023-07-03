@@ -10,6 +10,7 @@ const cartSlice = createSlice({
     products: [],
     listItems: [],
     cartItems: [],
+    loader: false,
   },
   reducers: {
     allCategories(state, action) {
@@ -29,6 +30,9 @@ const cartSlice = createSlice({
     clearCart(state, action) {
       state.cartItems = [];
     },
+    LoaderVisiblity(state, action) {
+      state.loader = action.payload;
+    },
   },
 });
 
@@ -41,4 +45,5 @@ export const {
   addItem,
   removeItem,
   clearCart,
+  LoaderVisiblity,
 } = cartSlice.actions;
